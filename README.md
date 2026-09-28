@@ -1,2 +1,2 @@
 # TheBigCheese
-Third year game ai project 
+Third year game AI project.
