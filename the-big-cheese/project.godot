@@ -12,6 +12,7 @@ config_version=5
 
 config/name="TheBigCheese"
 config/description="Group project of 4 chuds"
+run/main_scene="uid://cj5d5oh8trx51"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://cexsih5untln3"
 
