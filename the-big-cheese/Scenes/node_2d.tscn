@@ -10,3 +10,12 @@ position = Vector2(417, 211)
 
 [node name="Rat" parent="." unique_id=1674442989 instance=ExtResource("2_v1qfn")]
 position = Vector2(934, 332)
+
+[node name="Rat2" parent="." unique_id=1786554183 instance=ExtResource("2_v1qfn")]
+position = Vector2(-1941, -1278)
+
+[node name="Rat3" parent="." unique_id=460292245 instance=ExtResource("2_v1qfn")]
+position = Vector2(-3844, 2154)
+
+[node name="Rat4" parent="." unique_id=825203959 instance=ExtResource("2_v1qfn")]
+position = Vector2(3928, -1350)
