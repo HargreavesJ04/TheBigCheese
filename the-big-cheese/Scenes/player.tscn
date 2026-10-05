@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drn125ufkejw2"]
+
+[ext_resource type="Script" uid="uid://bqkvcf2k1fgsd" path="res://Scripts/playerJH.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cexsih5untln3" path="res://Assets/Icon/moldy-cheese-scaled.jpeg" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(338, 303)
+
+[node name="Player" type="CharacterBody2D" unique_id=576139313]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736428677]
+position = Vector2(12, -6.5)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971376179]
+position = Vector2(18, -7)
+scale = Vector2(0.12109374, 0.14322919)
+texture = ExtResource("2_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1296481429]
