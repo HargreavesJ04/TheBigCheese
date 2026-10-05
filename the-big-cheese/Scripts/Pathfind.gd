@@ -1,7 +1,7 @@
 class_name Pathfinding
 extends Node
 
-func PathfindToPoint(EndPos: Vector2, StartPos: ):
+func PathfindToPoint(EndPos: Vector2, StartPos: Vector2, World):
 	var Endpoints: PackedVector2Array
 	
 	#If cell based, do per-cell,
