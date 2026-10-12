@@ -7,6 +7,7 @@ var VolY: float
 
 
 @onready var boids: Array = get_tree().get_nodes_in_group("Boids")
+@onready var cheese = "../Player" 
 
 func _ready() -> void:
 	
@@ -24,4 +25,9 @@ func cohesion() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	
 	pass
+	
+	
+	
+	
