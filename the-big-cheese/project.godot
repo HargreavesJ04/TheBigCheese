@@ -21,6 +21,10 @@ config/icon="uid://cexsih5untln3"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Boids="The rats baby"
+
 [input]
 
 cheese={
