@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 1100.0
 
+signal hit
 
 func _physics_process(delta: float) -> void:
 	
@@ -19,5 +20,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
-
+		
 	move_and_slide()
+	
+func _on_area_2d_body_entered(body) -> void:
+	print("something")

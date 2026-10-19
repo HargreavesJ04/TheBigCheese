@@ -24,6 +24,8 @@ window/stretch/aspect="expand"
 [global_group]
 
 Boids="The rats baby"
+Walls="like clash of clans "
+Player=""
 
 [input]
 

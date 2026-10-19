@@ -2,17 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="1_j2wod"]
 [ext_resource type="PackedScene" uid="uid://c0i7g8mv1j58h" path="res://Scenes/rat.tscn" id="2_v1qfn"]
+[ext_resource type="PackedScene" uid="uid://dmaeam27kvki1" path="res://Scenes/wall.tscn" id="3_hh5uf"]
 
 [node name="Node2D" type="Node2D" unique_id=36394845]
+position = Vector2(-147, 41)
 
-[node name="Player" parent="." unique_id=576139313 instance=ExtResource("1_j2wod")]
-position = Vector2(417, 211)
+[node name="Player" parent="." unique_id=576139313 groups=["Walls"] instance=ExtResource("1_j2wod")]
+position = Vector2(1189, 131)
 
 [node name="Rat" parent="." unique_id=1674442989 instance=ExtResource("2_v1qfn")]
-position = Vector2(934, 332)
+position = Vector2(-177, 256)
 
 [node name="Rat3" parent="." unique_id=460292245 instance=ExtResource("2_v1qfn")]
-position = Vector2(-2357, 1681)
+position = Vector2(285, -229)
 
 [node name="Rat4" parent="." unique_id=825203959 instance=ExtResource("2_v1qfn")]
-position = Vector2(3504, -1380)
+position = Vector2(-34, 861)
+
+[node name="Area2D2" parent="." unique_id=908270881 instance=ExtResource("3_hh5uf")]
+position = Vector2(-2553.0005, -20)
+scale = Vector2(5, 9)
+
+[node name="Area2D" parent="." unique_id=1539395591 instance=ExtResource("3_hh5uf")]
+position = Vector2(3812, -63.000015)
+scale = Vector2(5, 9.455)

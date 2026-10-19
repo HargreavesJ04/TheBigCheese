@@ -4,13 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://cexsih5untln3" path="res://Assets/Icon/moldy-cheese-scaled.jpeg" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(338, 303)
+size = Vector2(155, 147)
 
-[node name="Player" type="CharacterBody2D" unique_id=576139313]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi1d0"]
+size = Vector2(319, 285)
+
+[node name="Player" type="CharacterBody2D" unique_id=576139313 groups=["Player"]]
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736428677]
-position = Vector2(12, -6.5)
+position = Vector2(-2.5, 4.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971376179]
@@ -20,3 +23,11 @@ texture = ExtResource("2_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1296481429]
 zoom = Vector2(0.2, 0.2)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=175817621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=906873854]
+position = Vector2(18.5, -6.5)
+shape = SubResource("RectangleShape2D_gi1d0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
