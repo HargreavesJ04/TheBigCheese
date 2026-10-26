@@ -1,35 +1,50 @@
 extends Node2D
 
-var PosX: float
-var PosY: float
-var VolX: float
-var VolY: float
+@export var speed = 500;
+var velocity = Vector2.ZERO	
 
-var speed = 500;
 var direction = Vector2.RIGHT
 var moveRight = true
 
 
-@onready var boids: Array = get_tree().get_nodes_in_group("Boids") #
+
+@onready var boids = $CharacterBody2D
 @onready var cheese = "../Player" 
-@onready var RatBody = $CharacterBody2D
+  
+ 
 
 func _ready() -> void:
-	pass
-	for boid in boids:
-		if boid != self: 
-			print(boid.global_position)
-			
+	pass	
 	
 
 func separation() -> void:
 	pass
 	
-func alignment() -> void:
-	pass
+func alignment(boidPopulation: Array, targetBoid: Node2D) -> Vector2:
+	
+	var avgVelocity = Vector2.ZERO
+	var neighbourBoids: int = 0 
+	
+	if boids != self and boids != targetBoid: 
+		if global_position.distance_to(boids.global_position) < 200:
+			avgVelocity.x += boids.velocity.x
+			avgVelocity.y += boids.velocity.y
+			neighbourBoids += 1
 
+#steering boids 
+	if neighbourBoids > 0:
+		avgVelocity /= neighbourBoids 
+		
+		avgVelocity = avgVelocity.normalized() * speed 
+		
+		var steering: Vector2 = avgVelocity - velocity
+		return steering
+		
+	return Vector2.ZERO
+		
 func cohesion() -> void:
 	pass
+
 
 func _process(delta: float) -> void:
 	
