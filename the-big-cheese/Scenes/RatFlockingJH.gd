@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var speed = 500;
+@export var perceptionRadius = 200;
 var velocity = Vector2.ZERO	
 
 var direction = Vector2.RIGHT
@@ -25,22 +26,23 @@ func alignment(boidPopulation: Array, targetBoid: Node2D) -> Vector2:
 	var avgVelocity = Vector2.ZERO
 	var neighbourBoids: int = 0 
 	
-	if boids != self and boids != targetBoid: 
-		if global_position.distance_to(boids.global_position) < 200:
-			avgVelocity.x += boids.velocity.x
-			avgVelocity.y += boids.velocity.y
-			neighbourBoids += 1
+	for boids in boidPopulation:
+		if boids != self and boids != targetBoid: 
+			if global_position.distance_to(boids.global_position) < perceptionRadius:
+				avgVelocity.x += boids.velocity.x
+				avgVelocity.y += boids.velocity.y
+				neighbourBoids += 1
 
 #steering boids 
 	if neighbourBoids > 0:
-		avgVelocity /= neighbourBoids 
 		
+		avgVelocity /= neighbourBoids 
 		avgVelocity = avgVelocity.normalized() * speed 
 		
 		var steering: Vector2 = avgVelocity - velocity
 		return steering
 		
-	return Vector2.ZERO
+	return Vector2.ZERO #return nothing if theres no neighbours 
 		
 func cohesion() -> void:
 	pass

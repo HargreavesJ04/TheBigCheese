@@ -9,9 +9,10 @@ position = Vector2(-147, 41)
 
 [node name="Player" parent="." unique_id=576139313 groups=["Walls"] instance=ExtResource("1_j2wod")]
 position = Vector2(1189, 131)
+scale = Vector2(1.0809774, 1.1833177)
 
 [node name="Rat" parent="." unique_id=1674442989 instance=ExtResource("2_v1qfn")]
-position = Vector2(-177, 256)
+position = Vector2(170, 126)
 
 [node name="Rat3" parent="." unique_id=460292245 instance=ExtResource("2_v1qfn")]
 position = Vector2(285, -229)

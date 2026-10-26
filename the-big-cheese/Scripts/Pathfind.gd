@@ -9,4 +9,6 @@ func PathfindToPoint(EndPos: Vector2, StartPos: Vector2, World):
 	#	Divide world into grid tiles - Every tile with any overlap is not pathable.
 	#	Pathing is more precice a short dist around the agent.
 	
+	#hiii guysss hiii its joe hiiiii hiiii hiiii 
+	
 	return Endpoints
