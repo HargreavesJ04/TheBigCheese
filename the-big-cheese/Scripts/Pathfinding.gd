@@ -1,3 +1,5 @@
+#https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
+
 extends Node
 
 
@@ -12,6 +14,30 @@ func Pathfind() -> void:
 		#Loop through all unsearched cells, and add cost.
 		#Return the lowest cost path.
 	#Return output path as an array of cells.
+	
+	#OpenList = []
+	#ClosedList = []
+	#OpenList.append(StartTile)
+	#	
+	#	While OpenList.size() > 0:
+	#		OpenList.find(LowestFCell)
+	#		ClosedList.append(LowestFCell)
+	#		OpenList.remove(LowestFCell)
+	#		CurrentCell = Cell
+	#		for AdjacentCells:
+	#			if (NotWalkable || ClosedList.find(Cell)):
+	#				#ContinueLoop
+	#			if (not OpenList.find(Cell)):
+	#				OpenList.append(Cell)
+	#				Cell.Parent = CurrentCell
+	#			else:
+	#				if GCost < OtherGCost:
+	#					Cell.Parent = CurrentCell
+	#					Recalc G & F scores
+	#		if (ClosedList.find(TargetCell)):
+	#			break
+	
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
