@@ -3,31 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://cy8k3gqwbgl88" path="res://Assets/rat.jpg" id="1_f5n7k"]
 [ext_resource type="Script" uid="uid://b0lwqp5tkxb3h" path="res://Scenes/RatFlockingJH.gd" id="1_p0vde"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi1d0"]
-size = Vector2(614, 626)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7va1"]
-size = Vector2(308, 317)
+size = Vector2(441.11115, 434.99985)
 
-[node name="Rat" type="Node2D" unique_id=1674442989 groups=["Boids"]]
+[node name="Rat" type="CharacterBody2D" unique_id=1422334410 groups=["Boids"]]
+collision_layer = 2
 script = ExtResource("1_p0vde")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1070686701]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_f5n7k")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1090436167]
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1934953997]
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_gi1d0")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=963101261]
-scale = Vector2(1.8, 1.8)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1014503807]
-position = Vector2(-1, -1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014503807]
+position = Vector2(-4.058221, -5.3999424)
+scale = Vector2(0.705822, 0.7200005)
 shape = SubResource("RectangleShape2D_t7va1")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

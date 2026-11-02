@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="1_g7sct"]
 [ext_resource type="PackedScene" uid="uid://c0i7g8mv1j58h" path="res://Scenes/rat.tscn" id="2_8kt8u"]
+[ext_resource type="Texture2D" uid="uid://dluj4ibc1bffv" path="res://icon.svg" id="3_losf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7va1"]
+size = Vector2(128, 131)
 
 [node name="Node2D" type="Node2D" unique_id=1772905984]
 
@@ -10,12 +14,100 @@ position = Vector2(379, 227)
 
 [node name="Rat" parent="." unique_id=1674442989 instance=ExtResource("2_8kt8u")]
 position = Vector2(-50, 544)
+speed = 500.0
+perceptionRadius = 200.0
+separationRadius = 100.0
+alignmentWeight = 1.0
+cohesionWeight = 1.0
+separationWeight = 2.5
 
 [node name="Rat2" parent="." unique_id=1985350727 instance=ExtResource("2_8kt8u")]
 position = Vector2(1023, 351)
+speed = 500.0
+perceptionRadius = 200.0
+separationRadius = 100.0
+alignmentWeight = 1.0
+cohesionWeight = 1.0
+separationWeight = 2.5
 
 [node name="Rat3" parent="." unique_id=180509393 instance=ExtResource("2_8kt8u")]
 position = Vector2(15, -151)
+speed = 500.0
+perceptionRadius = 200.0
+separationRadius = 100.0
+alignmentWeight = 1.0
+cohesionWeight = 1.0
+separationWeight = 2.5
 
 [node name="Rat4" parent="." unique_id=1888030652 instance=ExtResource("2_8kt8u")]
 position = Vector2(1703, 521)
+speed = 500.0
+perceptionRadius = 200.0
+separationRadius = 100.0
+alignmentWeight = 1.0
+cohesionWeight = 1.0
+separationWeight = 2.5
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=166008811 groups=["Walls"]]
+position = Vector2(-2494, 189)
+scale = Vector2(1.8350579, 28.174936)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1988275305]
+texture = ExtResource("3_losf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=342242854]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_t7va1")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1243360043 groups=["Walls"]]
+position = Vector2(3237, 189)
+scale = Vector2(2.0750566, 29.774937)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=304125952]
+texture = ExtResource("3_losf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=79962161]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_t7va1")
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=1306464230 groups=["Walls"]]
+position = Vector2(451, -1478)
+rotation = 1.5707964
+scale = Vector2(2.1550574, 45.894936)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall3" unique_id=1244146116]
+texture = ExtResource("3_losf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=2065340356]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_t7va1")
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=54124034 groups=["Walls"]]
+position = Vector2(545, 1909.0001)
+rotation = 1.5707964
+scale = Vector2(2.1550574, 45.894936)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall4" unique_id=1602566485]
+texture = ExtResource("3_losf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1537701134]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_t7va1")
+
+[node name="Rat5" parent="." unique_id=1043185756 instance=ExtResource("2_8kt8u")]
+position = Vector2(-1580, -592)
+
+[node name="Rat6" parent="." unique_id=1889986317 instance=ExtResource("2_8kt8u")]
+position = Vector2(-260, -632)
+
+[node name="Rat7" parent="." unique_id=1881603155 instance=ExtResource("2_8kt8u")]
+position = Vector2(-841, 757)
+
+[node name="Rat8" parent="." unique_id=502498003 instance=ExtResource("2_8kt8u")]
+position = Vector2(1641, -238)
+
+[node name="Rat9" parent="." unique_id=1088180789 instance=ExtResource("2_8kt8u")]
+position = Vector2(1375, -947)
+
+[node name="Rat10" parent="." unique_id=1875352972 instance=ExtResource("2_8kt8u")]
+position = Vector2(1483, 1023)

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://brxpig0iiklvb"]
+
+[node name="BoidUI" type="Control" unique_id=1771989462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1570738199]
+
+[node name="Alignment" type="HSlider" parent="CanvasLayer" unique_id=1583402982]
+offset_right = 107.0
+offset_bottom = 16.0
+
+[node name="Cohesion" type="HSlider" parent="CanvasLayer" unique_id=1984832327]
+offset_top = 16.0
+offset_right = 107.0
+offset_bottom = 32.0
+
+[node name="Seperation" type="HSlider" parent="CanvasLayer" unique_id=364072571]
+offset_top = 34.0
+offset_right = 107.0
+offset_bottom = 50.0
+
+[node name="ToPlayer" type="HSlider" parent="CanvasLayer" unique_id=1520783503]
+offset_top = 52.0
+offset_right = 107.0
+offset_bottom = 68.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=356836153]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.0236635, 1.8728714)
