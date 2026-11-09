@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://by7wyixci5s5g" path="res://rooms/room_end_down.tscn" id="11_ssc4k"]
 [ext_resource type="PackedScene" uid="uid://dkcaj5qtkgsiy" path="res://rooms/room_end_left.tscn" id="12_feyhl"]
 [ext_resource type="PackedScene" uid="uid://cmcx8h2f2k2xy" path="res://rooms/room_end_right.tscn" id="13_20wg6"]
+[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_straight_udr.tscn" id="14_1pgml"]
 [ext_resource type="PackedScene" uid="uid://cdanmssphi15y" path="res://rooms/room_end_up.tscn" id="14_tturg"]
+[ext_resource type="PackedScene" uid="uid://bkukxxmvnale" path="res://rooms/room_straight_hor_cool.tscn" id="15_82e0k"]
 
 [node name="Node2D" type="Node2D" unique_id=1772905984]
 
@@ -59,4 +61,5 @@ position = Vector2(1483, 1023)
 
 [node name="DungeonGenerator" type="Node2D" parent="." unique_id=1146671962]
 script = ExtResource("4_1pgml")
-room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp")])
+room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp"), ExtResource("14_1pgml"), ExtResource("15_82e0k")])
+max_rooms = 30

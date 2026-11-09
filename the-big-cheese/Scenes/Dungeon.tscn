@@ -11,11 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://cdanmssphi15y" path="res://rooms/room_end_up.tscn" id="9_v65wq"]
 [ext_resource type="PackedScene" uid="uid://cx0u0ya08ojxn" path="res://rooms/room_straight_hor.tscn" id="10_2hyuw"]
 [ext_resource type="PackedScene" uid="uid://dtu6sxlb260wn" path="res://rooms/room_straight_vert.tscn" id="11_8tjf6"]
+[ext_resource type="PackedScene" uid="uid://bkukxxmvnale" path="res://rooms/room_straight_hor_cool.tscn" id="12_873mn"]
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="12_mgebp"]
+[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_straight_udr.tscn" id="13_fcp1i"]
 
 [node name="Dungeon" type="Node2D" unique_id=1053355775]
 script = ExtResource("1_3bpxm")
-room_scenes = Array[PackedScene]([ExtResource("2_mgebp"), ExtResource("3_052fp"), ExtResource("4_873mn"), ExtResource("5_fcp1i"), ExtResource("6_g171e"), ExtResource("7_soaoq"), ExtResource("8_rqh0l"), ExtResource("9_v65wq"), ExtResource("10_2hyuw"), ExtResource("11_8tjf6")])
+room_scenes = Array[PackedScene]([ExtResource("2_mgebp"), ExtResource("3_052fp"), ExtResource("4_873mn"), ExtResource("5_fcp1i"), ExtResource("6_g171e"), ExtResource("7_soaoq"), ExtResource("8_rqh0l"), ExtResource("9_v65wq"), ExtResource("10_2hyuw"), ExtResource("11_8tjf6"), ExtResource("12_873mn"), ExtResource("13_fcp1i")])
 
 [node name="Player" parent="." unique_id=576139313 instance=ExtResource("12_mgebp")]
 position = Vector2(379, 227)
