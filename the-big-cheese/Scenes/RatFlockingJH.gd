@@ -4,11 +4,11 @@ extends CharacterBody2D
 @export var speed: float = 500.0
 @export var max_force: float = 2000.0 #cap how sharply the boids can turn
 @export var perceptionRadius: float = 450.0 #vision in pixels to search for other boids
-@export var separationRadius: float = 300.0 #a boids "personal spcae" I guess in pixels 
+@export var separationRadius: float = 300.0 #a boids "personal space" I guess in pixels 
 
 #Steering Weights
 @export var alignmentWeight: float = 1.5 #weight to steer toward the average heading of the flock
-@export var cohesionWeight: float = 1.0 #weight to sterr to the avberage center position of the flock 
+@export var cohesionWeight: float = 1.0 #weight to steeer to the average center position of the flock 
 @export var separationWeight: float = 3.5 #weight to steer away from other boids 
 @export var targetWeight: float = 2.5 #weight for seeking the target (player)
 
@@ -75,7 +75,7 @@ func _move_and_bounce() -> void:
 
 #flocking and seeking
 
-#stolen from ryan reynold 
+
 func steer_towards(desired_direction: Vector2) -> Vector2:
 	var desired_velocity: Vector2 = desired_direction.normalized() * speed
 	return desired_velocity - velocity
