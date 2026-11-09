@@ -8,6 +8,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func Pathfind() -> void:
+	
+	#Pathfinding order:
+		#Pathfind through rooms first.
+		#When in each room, pathfind to nearest door to next room.
+	#Pathfind to random location when not in range of player
+	#Pathfind towards player (location updated every 5 seconds), when in rough range of the player.
+	#Pathfind exctly to the player, if player is in sight/same room.
+	
 	#Take first cell position
 	#A* to final position:
 		#Keep a list of all prior searched cells, with costs applied.
@@ -36,7 +44,6 @@ func Pathfind() -> void:
 	#					Recalc G & F scores
 	#		if (ClosedList.find(TargetCell)):
 	#			break
-	
 	
 	pass
 
