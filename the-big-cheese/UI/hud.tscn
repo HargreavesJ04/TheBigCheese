@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://btkyb4nb7ujgf"]
+
+[ext_resource type="Script" uid="uid://bt4l1fo454vcc" path="res://UI/hud.gd" id="1_bytes"]
+[ext_resource type="FontFile" uid="uid://bht3rgwk2shpc" path="res://Assets/Fonts/SuperMario256.ttf" id="2_2o5uh"]
+
+[node name="HUD" type="CanvasLayer" unique_id=559535587]
+script = ExtResource("1_bytes")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1678511928]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 19.0
+offset_right = 135.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2o5uh")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="." unique_id=864560907]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -459.0
+offset_top = 89.0
+offset_right = 482.0
+offset_bottom = 157.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2o5uh")
+theme_override_font_sizes/font_size = 64
+text = "THE RATS ARE AFTER YOU!"
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=379397730]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -137.0
+offset_right = 123.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_2o5uh")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=287384045]
+wait_time = 2.0
+one_shot = true

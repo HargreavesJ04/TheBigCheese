@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Movement Parameters
-@export var speed: float = 500.0
+@export var speed: float = 1500.0
 @export var max_force: float = 2000.0 #cap how sharply the boids can turn
 @export var perceptionRadius: float = 450.0 #vision in pixels to search for other boids
 @export var separationRadius: float = 300.0 #a boids "personal space" I guess in pixels 
@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var alignmentWeight: float = 1.5 #weight to steer toward the average heading of the flock
 @export var cohesionWeight: float = 1.0 #weight to steeer to the average center position of the flock 
 @export var separationWeight: float = 3.5 #weight to steer away from other boids 
-@export var targetWeight: float = 2.5 #weight for seeking the target (player)
+@export var targetWeight: float = 5  #weight for seeking the target (player)
 
 @onready var cheese: Node2D = get_node_or_null("../Player")
 
