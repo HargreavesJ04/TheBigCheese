@@ -3,6 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="1_g7sct"]
 [ext_resource type="PackedScene" uid="uid://c0i7g8mv1j58h" path="res://Scenes/rat.tscn" id="2_8kt8u"]
 [ext_resource type="Texture2D" uid="uid://dluj4ibc1bffv" path="res://icon.svg" id="3_losf4"]
+[ext_resource type="Script" uid="uid://dmqgc0ksjmcc1" path="res://Scenes/dungeon_generator.gd" id="4_1pgml"]
+[ext_resource type="PackedScene" uid="uid://cx0u0ya08ojxn" path="res://rooms/room_straight_hor.tscn" id="5_82e0k"]
+[ext_resource type="PackedScene" uid="uid://dtu6sxlb260wn" path="res://rooms/room_straight_vert.tscn" id="6_jf0cp"]
+[ext_resource type="PackedScene" uid="uid://chcf4tm36r7hv" path="res://rooms/room_corner_dl.tscn" id="7_ah8o3"]
+[ext_resource type="PackedScene" uid="uid://cgg4qhw5g2twd" path="res://rooms/room_corner_dr.tscn" id="8_cfmdy"]
+[ext_resource type="PackedScene" uid="uid://kememnylveud" path="res://rooms/room_corner_ul.tscn" id="9_ddo4c"]
+[ext_resource type="PackedScene" uid="uid://dkevduwqtoivx" path="res://rooms/room_corner_ur.tscn" id="10_u5s1j"]
+[ext_resource type="PackedScene" uid="uid://by7wyixci5s5g" path="res://rooms/room_end_down.tscn" id="11_ssc4k"]
+[ext_resource type="PackedScene" uid="uid://dkcaj5qtkgsiy" path="res://rooms/room_end_left.tscn" id="12_feyhl"]
+[ext_resource type="PackedScene" uid="uid://cmcx8h2f2k2xy" path="res://rooms/room_end_right.tscn" id="13_20wg6"]
+[ext_resource type="PackedScene" uid="uid://cdanmssphi15y" path="res://rooms/room_end_up.tscn" id="14_tturg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7va1"]
 size = Vector2(128, 131)
@@ -14,42 +25,30 @@ position = Vector2(379, 227)
 
 [node name="Rat" parent="." unique_id=1674442989 instance=ExtResource("2_8kt8u")]
 position = Vector2(-50, 544)
-speed = 500.0
-perceptionRadius = 200.0
-separationRadius = 100.0
 alignmentWeight = 1.0
 cohesionWeight = 1.0
 separationWeight = 2.5
 
 [node name="Rat2" parent="." unique_id=1985350727 instance=ExtResource("2_8kt8u")]
 position = Vector2(1023, 351)
-speed = 500.0
-perceptionRadius = 200.0
-separationRadius = 100.0
 alignmentWeight = 1.0
 cohesionWeight = 1.0
 separationWeight = 2.5
 
 [node name="Rat3" parent="." unique_id=180509393 instance=ExtResource("2_8kt8u")]
 position = Vector2(15, -151)
-speed = 500.0
-perceptionRadius = 200.0
-separationRadius = 100.0
 alignmentWeight = 1.0
 cohesionWeight = 1.0
 separationWeight = 2.5
 
 [node name="Rat4" parent="." unique_id=1888030652 instance=ExtResource("2_8kt8u")]
 position = Vector2(1703, 521)
-speed = 500.0
-perceptionRadius = 200.0
-separationRadius = 100.0
 alignmentWeight = 1.0
 cohesionWeight = 1.0
 separationWeight = 2.5
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=166008811 groups=["Walls"]]
-position = Vector2(-2494, 189)
+position = Vector2(-10512, -3067)
 scale = Vector2(1.8350579, 28.174936)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1988275305]
@@ -60,7 +59,7 @@ position = Vector2(-2, 1.5)
 shape = SubResource("RectangleShape2D_t7va1")
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=1243360043 groups=["Walls"]]
-position = Vector2(3237, 189)
+position = Vector2(-4781, -3067)
 scale = Vector2(2.0750566, 29.774937)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=304125952]
@@ -71,7 +70,7 @@ position = Vector2(-2, 1.5)
 shape = SubResource("RectangleShape2D_t7va1")
 
 [node name="Wall3" type="StaticBody2D" parent="." unique_id=1306464230 groups=["Walls"]]
-position = Vector2(451, -1478)
+position = Vector2(-7567, -4734)
 rotation = 1.5707964
 scale = Vector2(2.1550574, 45.894936)
 
@@ -83,7 +82,7 @@ position = Vector2(-2, 1.5)
 shape = SubResource("RectangleShape2D_t7va1")
 
 [node name="Wall4" type="StaticBody2D" parent="." unique_id=54124034 groups=["Walls"]]
-position = Vector2(545, 1909.0001)
+position = Vector2(-7473, -1346.9999)
 rotation = 1.5707964
 scale = Vector2(2.1550574, 45.894936)
 
@@ -111,3 +110,8 @@ position = Vector2(1375, -947)
 
 [node name="Rat10" parent="." unique_id=1875352972 instance=ExtResource("2_8kt8u")]
 position = Vector2(1483, 1023)
+
+[node name="DungeonGenerator" type="Node2D" parent="." unique_id=1146671962]
+script = ExtResource("4_1pgml")
+room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp")])
+max_rooms = 25
