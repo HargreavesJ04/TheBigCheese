@@ -59,57 +59,91 @@ func generate_dungeon() -> void:
 
 	var target = mini(max_rooms, dungeon_width * dungeon_height)
 
-	if target < 2:
+	if target < 1:
 		return
 
-	var best_path: Array[Vector2i] = []
+	var start = Vector2i.ZERO
+	var visited: Dictionary = {start: true}
+	var stack: Array[Vector2i] = [start]
 
-	for attempt in range(generation_attempts):
-		var path: Array[Vector2i] = [Vector2i.ZERO]
-		var visited: Dictionary = {Vector2i.ZERO: true}
-
-		while path.size() < target:
-			var current = path.back()
-			var choices: Array[Vector2i] = []
-
-			for direction in DIRECTIONS:
-				var next_pos = current + direction
-
-				if not is_inside_grid(next_pos):
-					continue
-
-				if visited.has(next_pos):
-					continue
-
-				choices.append(next_pos)
-
-			if choices.is_empty():
-				break
-
-			var next_pos: Vector2i = choices.pick_random()
-			path.append(next_pos)
-			visited[next_pos] = true
-
-		if path.size() > best_path.size():
-			best_path = path.duplicate()
-
-		if best_path.size() == target:
-			break
-
-	for i in range(best_path.size()):
-		var pos = best_path[i]
-		var doors: Array[bool] = [false, false, false, false]
-
-		if i > 0:
-			var previous = best_path[i - 1]
-			doors[direction_between(pos, previous)] = true
-
-		if i < best_path.size() - 1:
-			var next_pos = best_path[i + 1]
-			doors[direction_between(pos, next_pos)] = true
-
-		grid[pos] = doors
-
+	grid[start] = [false, false, false, false]
+	
+	while not stack.is_empty() and visited.size() < target:
+		var current = stack.back()
+		var choices: Array[Vector2i] = []
+		
+		for direction in DIRECTIONS:
+			var next_pos = current + direction
+		
+			if not is_inside_grid(next_pos):
+				continue
+				
+			if visited.has(next_pos):
+				continue
+				
+			choices.append(next_pos)
+			
+		if choices.is_empty():
+			stack.pop_back()
+			continue
+		
+		var next_pos: Vector2i = choices.pick_random()
+		var direction_index = direction_between(current, next_pos)
+		var opposite_index = (direction_index + 2) % 4
+		
+		grid[current][direction_index] = true
+		grid[next_pos] = [false, false, false, false]
+		grid[next_pos][opposite_index] = true
+		
+		visited[next_pos] = true
+		stack.append(next_pos)
+	
+	#for attempt in range(generation_attempts):
+		#var path: Array[Vector2i] = [Vector2i.ZERO]
+		#var visited: Dictionary = {Vector2i.ZERO: true}
+#
+		#while path.size() < target:
+			#var current = path.back()
+			#var choices: Array[Vector2i] = []
+#
+			#for direction in DIRECTIONS:
+				#var next_pos = current + direction
+#
+				#if not is_inside_grid(next_pos):
+					#continue
+#
+				#if visited.has(next_pos):
+					#continue
+#
+				#choices.append(next_pos)
+#
+			#if choices.is_empty():
+				#break
+#
+			#var next_pos: Vector2i = choices.pick_random()
+			#path.append(next_pos)
+			#visited[next_pos] = true
+#
+		#if path.size() > best_path.size():
+			#best_path = path.duplicate()
+#
+		#if best_path.size() == target:
+			#break
+#
+	#for i in range(best_path.size()):
+		#var pos = best_path[i]
+		#var doors: Array[bool] = [false, false, false, false]
+#
+		#if i > 0:
+			#var previous = best_path[i - 1]
+			#doors[direction_between(pos, previous)] = true
+#
+		#if i < best_path.size() - 1:
+			#var next_pos = best_path[i + 1]
+			#doors[direction_between(pos, next_pos)] = true
+#
+		#grid[pos] = doors
+#
 	for pos in grid:
 		place_room(pos)
 

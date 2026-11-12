@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dn7uyfxmeoj7o"]
 
-[ext_resource type="Script" uid="uid://dmqgc0ksjmcc1" path="res://Scenes/dungeon_generator.gd" id="1_3bpxm"]
+[ext_resource type="Script" uid="uid://dmqgc0ksjmcc1" path="res://Scripts/dungeon_generator.gd" id="1_3bpxm"]
 [ext_resource type="PackedScene" uid="uid://chcf4tm36r7hv" path="res://rooms/room_corner_dl.tscn" id="2_mgebp"]
 [ext_resource type="PackedScene" uid="uid://cgg4qhw5g2twd" path="res://rooms/room_corner_dr.tscn" id="3_052fp"]
 [ext_resource type="PackedScene" uid="uid://kememnylveud" path="res://rooms/room_corner_ul.tscn" id="4_873mn"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dtu6sxlb260wn" path="res://rooms/room_straight_vert.tscn" id="11_8tjf6"]
 [ext_resource type="PackedScene" uid="uid://bkukxxmvnale" path="res://rooms/room_straight_hor_cool.tscn" id="12_873mn"]
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="12_mgebp"]
-[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_straight_udr.tscn" id="13_fcp1i"]
+[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_udr.tscn" id="13_fcp1i"]
 
 [node name="Dungeon" type="Node2D" unique_id=1053355775]
 script = ExtResource("1_3bpxm")

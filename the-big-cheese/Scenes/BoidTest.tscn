@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drn125ufkejw2" path="res://Scenes/player.tscn" id="1_g7sct"]
 [ext_resource type="PackedScene" uid="uid://c0i7g8mv1j58h" path="res://Scenes/rat.tscn" id="2_8kt8u"]
-[ext_resource type="Script" uid="uid://dmqgc0ksjmcc1" path="res://Scenes/dungeon_generator.gd" id="4_1pgml"]
+[ext_resource type="Script" uid="uid://dmqgc0ksjmcc1" path="res://Scripts/dungeon_generator.gd" id="4_1pgml"]
 [ext_resource type="PackedScene" uid="uid://cx0u0ya08ojxn" path="res://rooms/room_straight_hor.tscn" id="5_82e0k"]
 [ext_resource type="PackedScene" uid="uid://dtu6sxlb260wn" path="res://rooms/room_straight_vert.tscn" id="6_jf0cp"]
 [ext_resource type="PackedScene" uid="uid://chcf4tm36r7hv" path="res://rooms/room_corner_dl.tscn" id="7_ah8o3"]
@@ -12,9 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://by7wyixci5s5g" path="res://rooms/room_end_down.tscn" id="11_ssc4k"]
 [ext_resource type="PackedScene" uid="uid://dkcaj5qtkgsiy" path="res://rooms/room_end_left.tscn" id="12_feyhl"]
 [ext_resource type="PackedScene" uid="uid://cmcx8h2f2k2xy" path="res://rooms/room_end_right.tscn" id="13_20wg6"]
-[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_straight_udr.tscn" id="14_1pgml"]
+[ext_resource type="PackedScene" uid="uid://s2ehgsrdmk6s" path="res://rooms/room_udr.tscn" id="14_1pgml"]
 [ext_resource type="PackedScene" uid="uid://cdanmssphi15y" path="res://rooms/room_end_up.tscn" id="14_tturg"]
 [ext_resource type="PackedScene" uid="uid://bkukxxmvnale" path="res://rooms/room_straight_hor_cool.tscn" id="15_82e0k"]
+[ext_resource type="PackedScene" uid="uid://cuecho47utplr" path="res://rooms/room_ulr.tscn" id="16_ddo4c"]
+[ext_resource type="PackedScene" uid="uid://bx4w8b25uxvf2" path="res://rooms/room_udl.tscn" id="17_u5s1j"]
+[ext_resource type="PackedScene" uid="uid://l2iup3phvfq3" path="res://rooms/room_dlr.tscn" id="18_ssc4k"]
+[ext_resource type="PackedScene" uid="uid://3dm6so05ptxm" path="res://rooms/room_all.tscn" id="19_feyhl"]
 
 [node name="Node2D" type="Node2D" unique_id=1772905984]
 
@@ -61,5 +65,7 @@ position = Vector2(1483, 1023)
 
 [node name="DungeonGenerator" type="Node2D" parent="." unique_id=1146671962]
 script = ExtResource("4_1pgml")
-room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp"), ExtResource("14_1pgml"), ExtResource("15_82e0k")])
-max_rooms = 30
+room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp"), ExtResource("14_1pgml"), ExtResource("15_82e0k"), ExtResource("16_ddo4c"), ExtResource("17_u5s1j"), ExtResource("18_ssc4k"), ExtResource("19_feyhl")])
+dungeon_width = 8
+dungeon_height = 8
+max_rooms = 64
