@@ -6,6 +6,7 @@ extends Node2D
 @export var dungeon_width: int = 6
 @export var dungeon_height: int = 6
 @export var max_rooms: int = 15
+@export_range(0.0, 1.0, 0.05) var branch_chance: float = 0.7
 @export var generation_attempts: int = 1000
 
 const DIRECTIONS = [
@@ -64,39 +65,44 @@ func generate_dungeon() -> void:
 
 	var start = Vector2i.ZERO
 	var visited: Dictionary = {start: true}
-	var stack: Array[Vector2i] = [start]
+	var active: Array[Vector2i] = [start]
 
 	grid[start] = [false, false, false, false]
-	
-	while not stack.is_empty() and visited.size() < target:
-		var current = stack.back()
+
+	while not active.is_empty() and visited.size() < target:
+		var current_index = active.size() - 1
+
+		if randf() < branch_chance:
+			current_index = randi_range(0, active.size() - 1)
+
+		var current = active[current_index]
 		var choices: Array[Vector2i] = []
-		
+
 		for direction in DIRECTIONS:
 			var next_pos = current + direction
-		
+
 			if not is_inside_grid(next_pos):
 				continue
-				
+
 			if visited.has(next_pos):
 				continue
-				
+
 			choices.append(next_pos)
-			
+
 		if choices.is_empty():
-			stack.pop_back()
+			active.remove_at(current_index)
 			continue
-		
+
 		var next_pos: Vector2i = choices.pick_random()
 		var direction_index = direction_between(current, next_pos)
 		var opposite_index = (direction_index + 2) % 4
-		
+
 		grid[current][direction_index] = true
 		grid[next_pos] = [false, false, false, false]
 		grid[next_pos][opposite_index] = true
-		
+
 		visited[next_pos] = true
-		stack.append(next_pos)
+		active.append(next_pos)
 	
 	#for attempt in range(generation_attempts):
 		#var path: Array[Vector2i] = [Vector2i.ZERO]
