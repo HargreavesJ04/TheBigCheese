@@ -66,6 +66,7 @@ position = Vector2(1483, 1023)
 [node name="DungeonGenerator" type="Node2D" parent="." unique_id=1146671962]
 script = ExtResource("4_1pgml")
 room_scenes = Array[PackedScene]([ExtResource("7_ah8o3"), ExtResource("8_cfmdy"), ExtResource("9_ddo4c"), ExtResource("10_u5s1j"), ExtResource("11_ssc4k"), ExtResource("12_feyhl"), ExtResource("13_20wg6"), ExtResource("14_tturg"), ExtResource("5_82e0k"), ExtResource("6_jf0cp"), ExtResource("14_1pgml"), ExtResource("15_82e0k"), ExtResource("16_ddo4c"), ExtResource("17_u5s1j"), ExtResource("18_ssc4k"), ExtResource("19_feyhl")])
-dungeon_width = 8
-dungeon_height = 8
-max_rooms = 64
+dungeon_width = 10
+dungeon_height = 10
+max_rooms = 100
+branch_chance = 1.0
