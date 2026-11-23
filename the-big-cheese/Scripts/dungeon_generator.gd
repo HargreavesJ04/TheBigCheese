@@ -9,6 +9,9 @@ extends Node2D
 @export_range(0.0, 1.0, 0.05) var branch_chance: float = 0.7
 @export var generation_attempts: int = 1000
 
+#Signal added by Cassius, to make a map for the pathfinding.
+signal RoomsGenerated
+
 const DIRECTIONS = [
 	Vector2i.UP,
 	Vector2i.RIGHT,
@@ -152,6 +155,8 @@ func generate_dungeon() -> void:
 #
 	for pos in grid:
 		place_room(pos)
+		
+	RoomsGenerated.emit()
 
 
 func direction_between(from: Vector2i, to: Vector2i) -> int:
@@ -202,3 +207,23 @@ func is_inside_grid(pos: Vector2i) -> bool:
 		and pos.x < dungeon_width
 		and pos.y < dungeon_height
 	)
+
+func GetPathableTiles() -> Dictionary:
+	var TileSize = 16
+	
+	#If walkable, val is true, if not, val is false
+	var TileMap: Dictionary = {}
+	
+	for room in get_children():
+		if !room.is_queued_for_deletion():
+			var Layers := room.find_children("*", "TileMapLayer", true, false)
+			for i: TileMapLayer in Layers:
+				var UsedRect: Rect2i = i.get_used_rect()
+				
+				for x in range(UsedRect.position.x, UsedRect.end.x):
+					for y in range(UsedRect.position.y, UsedRect.end.y):
+						var Cell := Vector2i(x, y)
+						
+			
+			
+			

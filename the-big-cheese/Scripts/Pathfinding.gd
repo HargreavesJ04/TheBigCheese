@@ -1,11 +1,13 @@
 #https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
 
+class_name Pathfinding
 extends Node
 
+@export var dungeon_generator: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	
 
 func Pathfind() -> void:
 	
